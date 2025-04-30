@@ -1,0 +1,21 @@
+### Get all platforms
+GET http://localhost:5079/api/platforms
+Accept: application/json
+
+###
+
+### Get platform by ID
+GET http://localhost:5079/api/platforms/12
+Accept: application/json
+
+###
+
+### Create new platform
+POST http://localhost:5079/api/platforms
+Content-Type: application/json
+
+{
+  "name": "Docker",
+  "publisher": "Docker",
+  "cost": "Free"
+}
