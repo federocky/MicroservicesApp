@@ -1,0 +1,3 @@
+### Get all platforms
+POST http://localhost:6000/api/c/platforms
+Accept: application/json
