@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PlatformService.Data;
+using PlatformService.SyncDataServices.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 {
@@ -12,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
     builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 
-    builder.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
+    builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 
     builder.Services.AddControllers();
 

@@ -5,6 +5,7 @@ namespace PlatformService.Controllers
     using PlatformService.Data;
     using PlatformService.Dtos;
     using PlatformService.Models;
+    using PlatformService.SyncDataServices.Http;
     using System.Collections.Generic;
 
     [Route("api/[controller]")]

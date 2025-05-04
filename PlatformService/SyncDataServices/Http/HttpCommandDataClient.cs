@@ -1,6 +1,7 @@
 namespace PlatformService.SyncDataServices.Http
 {
-
+    using System.Text;
+    using System.Text.Json;
     using PlatformService.Dtos;
 
     public class HttpCommandDataClient : ICommandDataClient
