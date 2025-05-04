@@ -12,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 
     builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 
+    builder.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
+
     builder.Services.AddControllers();
 
 }
