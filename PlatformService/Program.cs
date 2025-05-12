@@ -5,9 +5,21 @@ using PlatformService.SyncDataServices.Http;
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddOpenApi();
-    
-    builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseInMemoryDatabase("InMem"));
+
+    var env = builder.Environment;
+    if (env.IsProduction())
+    {
+        Console.WriteLine("--> Using SqlServer Db");
+        builder.Services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+    }
+    else
+    {
+        Console.WriteLine("--> Using InMem Db");
+        builder.Services.AddDbContext<AppDbContext>(options =>
+            options.UseInMemoryDatabase("InMem"));    
+    }    
+
 
     builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -22,12 +34,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 {
-    if (app.Environment.IsDevelopment())
+    var isProduction = app.Environment.IsProduction();
+
+    if (isProduction)
     {
         app.MapOpenApi();
     }
 
-    PrepDb.PrepPopulation(app);
+    PrepDb.PrepPopulation(app, isProduction);
 
     app.UseHttpsRedirection();
     app.MapControllers();
