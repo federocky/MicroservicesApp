@@ -7,15 +7,15 @@ GET http://localhost:6000/api/c/platforms
 Accept: application/json
 
 ### Get all commands for a platform
-GET http://localhost:6000/api/c/platforms/1/commands
+GET http://localhost:6000/api/c/platforms/4/commands
 Accept: application/json
 
 ### Get a command for a platform
-GET http://localhost:6000/api/c/platforms/1/commands/1
+GET http://localhost:6000/api/c/platforms/4/commands/1
 Accept: application/json
 
 ### Create a command for a platform
-POST http://localhost:6000/api/c/platforms/1/commands
+POST http://localhost:6000/api/c/platforms/4/commands
 Content-Type: application/json
 
 {
