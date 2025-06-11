@@ -1,3 +1,0 @@
-### Get all platforms
-GET http://localhost:8080/api/platforms
-Accept: application/json

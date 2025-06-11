@@ -4,12 +4,18 @@ Accept: application/json
 
 ###
 
-# ### Create new platform
-# POST http://localhost:31151/api/platforms
-# Content-Type: application/json
+### Get platform by ID
+GET http://acme.com/api/platforms/1
+Accept: application/json
 
-# {
-#   "name": "Docker",
-#   "publisher": "Docker",
-#   "cost": "Free"
-# }
+###
+
+# ### Create new platform
+POST http://acme.com/api/platforms
+Content-Type: application/json
+
+{
+  "name": "Terr",
+  "publisher": "Terraform",
+  "cost": "Free"
+}

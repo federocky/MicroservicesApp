@@ -1,17 +1,17 @@
 ### Get all platforms
-GET http://localhost:6000/api/c/platforms
+GET http://acme.com/api/c/platforms
 Accept: application/json
 
 ### Get all commands for a platform
-GET http://localhost:6000/api/c/platforms/1014/commands
+GET http://acme.com/api/c/platforms/1005/commands
 Accept: application/json
 
 ### Get a command for a platform
-GET http://localhost:6000/api/c/platforms/1014/commands/2
+GET http://acme.com/api/c/platforms/1005/commands/3
 Accept: application/json
 
 ### Create a command for a platform
-POST http://localhost:6000/api/c/platforms/1014/commands
+POST http://acme.com/api/c/platforms/1005/commands
 Content-Type: application/json
 
 {
